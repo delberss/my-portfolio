@@ -20,6 +20,17 @@ const Hero = () => {
         border: `1px solid ${theme.palette.primary.contrastText}`
     }))
 
+    const downloadPdf = () => {
+        const link = document.createElement("a");
+        link.href = "/curriculum.pdf";
+        link.download = "Delber_Soares_CV.pdf";
+        link.click();
+    };
+
+    const contactMe = () => {
+        window.location.href = "mailto:delberss@hotmail.com?subject=Contato&body=Olá, gostaria de entrar em contato com você.";
+    };
+
     return (
         <>
             <StyledHero>
@@ -39,14 +50,14 @@ const Hero = () => {
                             <Typography color="primary.contrastText" variant="h1" textAlign={"center"}>Delber Soares</Typography>
                             <Typography color="primary.contrastText" variant="h2" textAlign={"center"}>I’m a Systems Analyst</Typography>
                             <Grid container display={"flex"} justifyContent={"center"} spacing={3} marginTop={2}>
-                                <Grid size={{xs: 12, md: 4}} display={"flex"} justifyContent={"center"}>
-                                    <StyledButton>
+                                <Grid size={{ xs: 12, md: 4 }} display={"flex"} justifyContent={"center"}>
+                                    <StyledButton onClick={downloadPdf}>
                                         <DownloadIcon />
                                         <Typography>Download CV</Typography>
                                     </StyledButton>
                                 </Grid>
-                                <Grid size={{xs: 12, md: 4}}  display={"flex"} justifyContent={"center"}>
-                                    <StyledButton>
+                                <Grid size={{ xs: 12, md: 4 }} display={"flex"} justifyContent={"center"}>
+                                    <StyledButton onClick={contactMe}>
                                         <MailOutlineIcon />
                                         <Typography>Contact me</Typography>
                                     </StyledButton>
