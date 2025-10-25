@@ -4,6 +4,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
+import { ReactTyped } from "react-typed";
 
 const Hero = () => {
 
@@ -48,7 +49,19 @@ const Hero = () => {
                         </Grid>
                         <Grid size={{ xs: 12, md: 8 }}>
                             <Typography color="primary.contrastText" variant="h1" textAlign={"center"}>Delber Soares</Typography>
-                            <Typography color="primary.contrastText" variant="h2" textAlign={"center"}>I’m a Systems Analyst</Typography>
+                            <Typography color="primary.contrastText" variant="h2" textAlign={"center"}>
+                                <ReactTyped
+                                    strings={[
+                                        "I'm a Systems Analyst",
+                                        "I develop efficient solutions",
+                                        "I turn ideas into code"
+                                    ]}
+                                    typeSpeed={100}
+                                    backSpeed={30}
+                                    backDelay={2000}
+                                    loop
+                                />
+                            </Typography>
                             <Grid container display={"flex"} justifyContent={"center"} spacing={3} marginTop={2}>
                                 <Grid size={{ xs: 12, md: 4 }} display={"flex"} justifyContent={"center"}>
                                     <StyledButton onClick={downloadPdf}>
