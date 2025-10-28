@@ -4,13 +4,22 @@ import { useState } from 'react';
 
 export default function NavBar() {
 
-    const StyledToolBar = styled(Toolbar)(({ }) => ({
+    const StyledToolBar = styled(Toolbar)(() => ({
         display: "flex",
         justifyContent: "space-evenly",
         alignItems: "center"
-    }))
+    }));
 
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+    const handleScrollTo = (sectionId: string) => {
+        const section = document.getElementById(sectionId.toLowerCase());
+        if (section) {
+            const yOffset = -80; 
+            const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    };
 
     const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
@@ -22,12 +31,22 @@ export default function NavBar() {
 
     const menuItems = ["About", "Skills", "Projects"];
     return (
-        <AppBar position="absolute" >
+        <AppBar position="fixed" elevation={1}>
             <StyledToolBar variant="dense">
                 <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 4 }}>
-                    <MenuItem>About</MenuItem>
-                    <MenuItem>Skills</MenuItem>
-                    <MenuItem>Projects</MenuItem>
+                    {menuItems.map((item) => (
+                        <MenuItem
+                            key={item}
+                            onClick={() => handleScrollTo(item)}
+                            sx={(theme) => ({
+                                fontWeight: 500,
+                                '&:hover': { color: theme.palette.secondary.main },
+                                cursor: 'pointer',
+                            })}
+                        >
+                            {item}
+                        </MenuItem>
+                    ))}
                 </Box>
                 <Box
                     sx={{
@@ -53,14 +72,18 @@ export default function NavBar() {
                         }}
                     >
                         {menuItems.map((item) => (
-                            <MenuItem key={item} onClick={handleMenuClose}>
+                            <MenuItem
+                                key={item}
+                                onClick={() => {
+                                    handleScrollTo(item);
+                                    handleMenuClose();
+                                }}
+                            >
                                 {item}
                             </MenuItem>
                         ))}
                     </Menu>
-
                 </Box>
-
             </StyledToolBar>
         </AppBar>
     );
