@@ -21,6 +21,7 @@ const StyledButton: React.FC<StyledButtonProps> = ({children, onClick}) => {
         color: theme.palette.primary.contrastText,
          '&:hover': {
             backgroundColor: theme.palette.secondary.light,
+            color: theme.palette.secondary.contrastText,
         },
         cursor: "pointer"
     }))
