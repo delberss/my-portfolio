@@ -4,9 +4,10 @@ import type { ReactNode } from "react"
 interface StyledButtonProps {
     children: ReactNode
     onClick: () => void;
+    backgroundColorButtonProject: string;
 }
 
-const StyledButton: React.FC<StyledButtonProps> = ({children, onClick}) => {
+const StyledButton: React.FC<StyledButtonProps> = ({children, onClick, backgroundColorButtonProject}) => {
 
     const StyledButton = styled("button")(({theme}) => ({
         backgroundColor: "transparent",
@@ -20,7 +21,7 @@ const StyledButton: React.FC<StyledButtonProps> = ({children, onClick}) => {
         gap: "10px",
         color: theme.palette.primary.contrastText,
          '&:hover': {
-            backgroundColor: theme.palette.secondary.light,
+            backgroundColor: backgroundColorButtonProject || theme.palette.secondary.main,
             color: theme.palette.secondary.contrastText,
         },
         cursor: "pointer"
