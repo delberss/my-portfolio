@@ -3,6 +3,7 @@ import AboutSection from "./sections/AboutSection/AboutSection"
 import Hero from "./sections/Hero/Hero"
 import ProjectsSection from "./sections/ProjectsSection/ProjectsSection"
 import SkillsSection from "./sections/SkillsSection/SkillsSection"
+import FooterSection from "./sections/FooterSection/FooterSection"
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
+      <FooterSection />
     </>
   )
 }
