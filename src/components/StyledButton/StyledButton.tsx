@@ -4,10 +4,10 @@ import type { ReactNode } from "react"
 interface StyledButtonProps {
     children: ReactNode
     onClick: () => void;
-    backgroundColorButtonProject: string;
+    backgroundColorButtonProject?: string;
 }
 
-const StyledButton: React.FC<StyledButtonProps> = ({children, onClick, backgroundColorButtonProject}) => {
+const StyledButton: React.FC<StyledButtonProps> = ({children, onClick, backgroundColorButtonProject = "#4f8e3e"}) => {
 
     const StyledButton = styled("button")(({theme}) => ({
         backgroundColor: "transparent",
