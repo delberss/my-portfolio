@@ -9,21 +9,23 @@ const StyledExperience = styled("div")(({ theme }) => ({
 
 
 const projects: ProjectCardProps[] = [
-   {
-        title: "Title",
-        srcImage: "/images/project-default.png",
-        description: "This project was created to provide a practical and efficient solution for a specific problem, using modern development practices and technologies. It offers key features that allow users to interact intuitively, ensuring a smooth and responsive experience. The project is also scalable and easy to maintain, serving as a solid base for future improvements.",
-        technologies: "React, JavaScript",
-        websiteURL: "https://react.dev/",
-        codeURL: "https://github.com/facebook/react"
+    {
+        title: "My Portfolio",
+        srcImage: "/images/preview.png",
+        description: "A modern and responsive portfolio built with React, TypeScript, and Material UI, showcasing my projects, skills, and contact information.",
+        technologies: "React, TypeScript, Material UI",
+        websiteURL: "https://delber-portfolio.vercel.app/",
+        codeURL: "https://github.com/delberss/my-portfolio",
+        hasLivePreview: true,
     },
     {
-        title: "Title",
-        srcImage: "/images/project-default.png",
-        description: "This project was created to provide a practical and efficient solution for a specific problem, using modern development practices and technologies. It offers key features that allow users to interact intuitively, ensuring a smooth and responsive experience. The project is also scalable and easy to maintain, serving as a solid base for future improvements.",
-        technologies: "React, JavaScript",
-        websiteURL: "https://react.dev/",
-        codeURL: "https://github.com/facebook/react"
+        title: "Marketplace - DSS Store",
+        srcImage: "/images/dss-store.png",
+        description: "A modern marketplace frontend built with React, featuring user registration, product listing, cart management with Zustand, and a seamless checkout process with contact, shipping details, and Stripe credit card payments.",
+        technologies: "React, TypeScript, Node, Express, Stripe API, Zustand",
+        websiteURL: "https://github.com/delberss/marketplace/blob/master/README.md",
+        codeURL: "https://github.com/delberss/marketplace",
+        hasLivePreview: false
     },
 ];
 
@@ -47,6 +49,7 @@ const ProjectsSection: React.FC = () => {
                                     technologies={project.technologies}
                                     websiteURL={project.websiteURL}
                                     codeURL={project.codeURL}
+                                    hasLivePreview={project.hasLivePreview}
                                 />
                             </AnimationComponent>
                         </Grid>
