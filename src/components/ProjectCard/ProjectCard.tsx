@@ -8,6 +8,7 @@ export interface ProjectCardProps {
   technologies: string;
   websiteURL: string;
   codeURL: string;
+  hasLivePreview?: boolean;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -17,6 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   technologies,
   websiteURL,
   codeURL,
+  hasLivePreview,
 }) => {
   const StyledImg = styled("img")(({ theme }) => ({
     width: "100%",
@@ -66,42 +68,40 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     },
   }));
 
- return (
-  <StyledCard>
-    <Box>
-      <Typography variant="h5" gutterBottom>
-        {title}
+  return (
+    <StyledCard>
+      <Box>
+        <Typography variant="h5" gutterBottom>
+          {title}
+        </Typography>
+        <StyledImg src={srcImage} />
+        <DescriptionBox>
+          <Typography variant="body2">{description}</Typography>
+        </DescriptionBox>
+      </Box>
+
+      <Typography fontWeight={600} pt={1} pb={1}>
+        Technologies: {technologies}
       </Typography>
-      <StyledImg src={srcImage} />
-      <DescriptionBox>
-        <Typography variant="body2">{description}</Typography>
-      </DescriptionBox>
-    </Box>
 
-    <Typography fontWeight={600} pt={1} pb={1}>
-      Technologies: {technologies}
-    </Typography>
-
-    <Grid container spacing={1} pt={1}>
-      <Grid size={{xs:6}}>
-        <StyledButton
-          onClick={() => window.open(websiteURL)}
-          backgroundColorButtonProject={"white"}
-        >
-          View Project
-        </StyledButton>
+      <Grid container spacing={1} pt={1}>
+        <Grid size={{xs:6}}>
+          <StyledButton 
+              onClick={() => window.open(websiteURL, "_blank")}>
+              {hasLivePreview ? "View Project" : "View Images"}
+          </StyledButton>
+        </Grid>
+        <Grid size={{xs:6}}>
+          <StyledButton
+            onClick={() => window.open(codeURL)}
+            backgroundColorButtonProject={"white"}
+          >
+            View Code
+          </StyledButton>
+        </Grid>
       </Grid>
-      <Grid size={{xs:6}}>
-        <StyledButton
-          onClick={() => window.open(codeURL)}
-          backgroundColorButtonProject={"white"}
-        >
-          View Code
-        </StyledButton>
-      </Grid>
-    </Grid>
-  </StyledCard>
-);
+    </StyledCard>
+  );
 
 };
 
