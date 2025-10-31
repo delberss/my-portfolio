@@ -1,7 +1,9 @@
 # 🌐 My Portfolio
 
 <p align="center">
-  <img src="./public/images/preview.png" alt="Preview" width="600" />
+  <a href="https://delber-portfolio.vercel.app" target="_blank">
+    <img src="./public/images/preview.png" alt="Preview" width="600" />
+  </a>
 </p>
 
 
