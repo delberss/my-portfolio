@@ -1,73 +1,87 @@
-# React + TypeScript + Vite
+# 🌐 My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="./public/images/preview.png" alt="Preview" width="600" />
+</p>
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> Um portfólio moderno e responsivo desenvolvido com **React**, **TypeScript** e **Material UI**, destacando meus projetos, habilidades e informações de contato.
 
-## React Compiler
+🔗 **Acesse online:** [delber-portfolio.vercel.app](https://delber-portfolio.vercel.app)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Este projeto foi construído com as seguintes tecnologias:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- ⚛️ [React 19](https://react.dev/)
+- 💎 [TypeScript](https://www.typescriptlang.org/)
+- 🎨 [Material UI](https://mui.com/)
+- 💅 [Emotion Styled Components](https://emotion.sh/docs/styled)
+- 🧠 [React Icons](https://react-icons.github.io/react-icons/)
+- ⌨️ [React Typed](https://www.npmjs.com/package/react-typed)
+- ⚡ [Vite](https://vitejs.dev/) — para desenvolvimento rápido
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+## 📁 Estrutura do Projeto
+```
+my-portfolio/
+│
+├── public/
+│ └── images/ # Imagens públicas
+│ └── curriculum
+├── src/
+│ ├── assets/ # Imagens e ícones internos
+│ ├── components/ # Componentes reutilizáveis
+│ │ ├── AnimatedBackground/
+│ │ ├── AnimationComponent/
+│ │ ├── NavBar/
+│ │ ├── ProjectCard/
+│ │ └── StyledButton/
+│ │
+│ ├── pages/Home/sections/ # Seções da página principal
+│ │ ├── AboutSection/
+│ │ ├── Hero/
+│ │ ├── ProjectsSection/
+│ │ ├── SkillsSection/
+│ │ └── FooterSection/
+│ │
+│ ├── pages/Home/ # Página principal
+│ ├── utils/ # Utilitários e helpers
+│ ├── theme.ts # Tema global (Material UI)
+│ ├── App.tsx
+│ └── main.tsx
+│
+├── .gitignore
+├── package.json
+├── tsconfig.json
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🖥️ Como Rodar Localmente
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1️⃣ Clone o repositório
+
+```bash
+git clone https://github.com/delberss/my-portfolio.git
+```
+### 2️⃣ Acesse a pasta do projeto
+```bash
+cd my-portfolio
+```
+### 3️⃣ Instale as dependências
+
+```bash
+npm install
+```
+### 4️⃣ Execute o projeto
+```bash
+npm run dev
+```
+### 5️⃣ Abra no navegador
+```bash
+http://localhost:5173
 ```
