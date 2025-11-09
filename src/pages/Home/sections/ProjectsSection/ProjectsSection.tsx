@@ -19,6 +19,15 @@ const projects: ProjectCardProps[] = [
         hasLivePreview: true,
     },
     {
+        title: "Cinema Cidade",
+        srcImage: "/images/cinema.png",
+        description: "A modern and responsive platform for selling movie tickets, developed with React, TypeScript, Zustand, and Material UI.",
+        technologies: "React, TypeScript, Zustand, Material UI",
+        websiteURL: "https://cinema-delberss.vercel.app/",
+        codeURL: "https://github.com/delberss/cinema",
+        hasLivePreview: true,
+    },
+    {
         title: "Marketplace - DSS Store",
         srcImage: "/images/dss-store.png",
         description: "A modern marketplace frontend built with React, featuring user registration, product listing, cart management with Zustand, and a seamless checkout process with contact, shipping details, and Stripe credit card payments.",
