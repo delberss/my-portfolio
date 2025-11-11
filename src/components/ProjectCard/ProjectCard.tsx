@@ -33,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const StyledCard = styled("div")(({ theme }) => ({
     borderRadius: "12px",
     border: `1px solid ${theme.palette.secondary.main}`,
-    backgroundColor: theme.palette.primary.main,
+    background: `linear-gradient(60deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.main} 40%, ${theme.palette.secondary.main} 120%)`,
     color: theme.palette.primary.contrastText,
     padding: "20px",
     transition: "all 0.3s ease",
@@ -41,19 +41,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    height: "80vh",
+    height: "450px",
     "&:hover": {
-      backgroundColor: theme.palette.secondary.main,
-      color: theme.palette.secondary.contrastText,
-      transform: "translateY(-4px)",
-      boxShadow: "0 4px 16px rgba(0,0,0,0.4)",
+      transform: "translateY(-6px) scale(1.01)",
+      boxShadow: "0 8px 30px rgba(0,0,0,0.4)",
+      borderColor: theme.palette.secondary.light,
     },
   }));
 
   const DescriptionBox = styled(Box)(({ theme }) => ({
-    maxHeight: "100px",
+    height: "70px",
     overflowY: "auto",
-    paddingRight: "5px",
+    marginTop: theme.spacing(1),
+    paddingRight: "6px",
     scrollbarWidth: "thin",
     scrollbarColor: `${theme.palette.secondary.main} ${theme.palette.primary.main}`,
     "&::-webkit-scrollbar": {
@@ -80,18 +80,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </DescriptionBox>
       </Box>
 
-      <Typography fontWeight={600} pt={1} pb={1}>
+      <Typography fontWeight={600} mt={1}>
         Technologies: {technologies}
       </Typography>
 
       <Grid container spacing={1} pt={1}>
-        <Grid size={{xs:6}}>
-          <StyledButton 
-              onClick={() => window.open(websiteURL, "_blank")}>
-              {hasLivePreview ? "View Project" : "View Images"}
+        <Grid size={{ xs: 6 }}>
+          <StyledButton
+            onClick={() => window.open(websiteURL, "_blank")}>
+            {hasLivePreview ? "View Project" : "View Images"}
           </StyledButton>
         </Grid>
-        <Grid size={{xs:6}}>
+        <Grid size={{ xs: 6 }}>
           <StyledButton
             onClick={() => window.open(codeURL)}
             backgroundColorButtonProject={"white"}
