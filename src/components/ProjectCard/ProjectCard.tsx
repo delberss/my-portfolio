@@ -7,7 +7,12 @@ export interface ProjectCardProps {
   description: string;
   technologies: string;
   websiteURL: string;
-  codeURL: string;
+  codeURL:
+  | string
+  | {
+    frontend?: string;
+    backend?: string;
+  };
   hasLivePreview?: boolean;
 }
 
@@ -86,18 +91,49 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
       <Grid container spacing={1} pt={1}>
         <Grid size={{ xs: 6 }}>
-          <StyledButton
-            onClick={() => window.open(websiteURL, "_blank")}>
+          <StyledButton onClick={() => window.open(websiteURL, "_blank")}>
             {hasLivePreview ? "View Project" : "View Images"}
           </StyledButton>
         </Grid>
+
         <Grid size={{ xs: 6 }}>
-          <StyledButton
-            onClick={() => window.open(codeURL)}
-            backgroundColorButtonProject={"white"}
-          >
-            View Code
-          </StyledButton>
+          {typeof codeURL === "string" && (
+            <StyledButton
+              onClick={() => window.open(codeURL, "_blank")}
+              backgroundColorButtonProject={"white"}
+              sx={{ width: "100%" }}
+            >
+              View Code
+            </StyledButton>
+          )}
+
+          {typeof codeURL === "object" && (
+            <Grid container spacing={1}>
+              {codeURL.frontend && (
+                <Grid size={{ xs: 6 }}>
+                  <StyledButton
+                    onClick={() => window.open(codeURL.frontend, "_blank")}
+                    backgroundColorButtonProject={"white"}
+                    sx={{ width: "100%" }}
+                  >
+                    Frontend
+                  </StyledButton>
+                </Grid>
+              )}
+
+              {codeURL.backend && (
+                <Grid size={{ xs: 6 }}>
+                  <StyledButton
+                    onClick={() => window.open(codeURL.backend, "_blank")}
+                    backgroundColorButtonProject={"white"}
+                    sx={{ width: "100%" }}
+                  >
+                    Backend
+                  </StyledButton>
+                </Grid>
+              )}
+            </Grid>
+          )}
         </Grid>
       </Grid>
     </StyledCard>
