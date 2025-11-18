@@ -28,6 +28,19 @@ const projects: ProjectCardProps[] = [
         hasLivePreview: true,
     },
     {
+        title: "Text Analyzer",
+        srcImage: "/images/text-analyzer.png",
+        description: "A simple, modern, and responsive platform for text analysis, built with React, TypeScript, Styled Components, and Material UI, and integrated with a Python backend for data processing.",
+        technologies: "React, TypeScript, Python, FastAPI, Uvicorn,Material UI",
+        websiteURL: "https://dss-text-analyzer-frontend.vercel.app/",
+        codeURL: {
+            frontend: "https://github.com/delberss/dss-text-analyzer-frontend",
+            backend: "https://github.com/delberss/dss-text-analyzer-backend"
+        },
+
+        hasLivePreview: true,
+    },
+    {
         title: "Marketplace - DSS Store",
         srcImage: "/images/dss-store.png",
         description: "A modern marketplace frontend built with React, featuring user registration, product listing, cart management with Zustand, and a seamless checkout process with contact, shipping details, and Stripe credit card payments.",
