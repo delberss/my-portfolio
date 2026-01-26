@@ -43,7 +43,7 @@ const AboutSection: React.FC = () => {
                                 <WorkspacePremiumIcon />
                                 <Typography fontWeight={600}>Experience</Typography>
                                 <Typography>3+ years</Typography>
-                                <Typography>Systems Analyst</Typography>
+                                <Typography>Software Engineer</Typography>
                                 <Typography>Frontend Development</Typography>
                             </StyledCard>
                         </AnimationComponent>
