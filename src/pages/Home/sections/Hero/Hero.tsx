@@ -52,7 +52,7 @@ const Hero = () => {
                             <Typography color="primary.contrastText" variant="h2" textAlign={"center"}>
                                 <ReactTyped
                                     strings={[
-                                        "I'm a Systems Analyst",
+                                        "I'm a Front-End Developer",
                                         "I develop efficient solutions",
                                         "I turn ideas into code"
                                     ]}
