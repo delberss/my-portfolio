@@ -11,7 +11,7 @@ const StyledExperience = styled("div")(({ theme }) => ({
 const projects: ProjectCardProps[] = [
     {
         title: "My Portfolio",
-        srcImage: "/images/preview.png",
+        srcImages: ["/images/preview.png"],
         description: "A modern and responsive portfolio built with React, TypeScript, and Material UI, showcasing my projects, skills, and contact information.",
         technologies: "React, TypeScript, Material UI",
         websiteURL: "https://delber-portfolio.vercel.app/",
@@ -20,7 +20,7 @@ const projects: ProjectCardProps[] = [
     },
     {
         title: "Cinema Cidade",
-        srcImage: "/images/cinema.png",
+        srcImages: ["/images/cinema.png"],
         description: "A modern and responsive platform for selling movie tickets, developed with React, TypeScript, Zustand, and Material UI.",
         technologies: "React, TypeScript, Zustand, Material UI",
         websiteURL: "https://cinema-delberss.vercel.app/",
@@ -29,7 +29,7 @@ const projects: ProjectCardProps[] = [
     },
     {
         title: "Text Analyzer",
-        srcImage: "/images/text-analyzer.png",
+        srcImages: ["/images/text-analyzer.png"],
         description: "A simple, modern, and responsive platform for text analysis, built with React, TypeScript, Styled Components, and Material UI, and integrated with a Python backend for data processing.",
         technologies: "React, TypeScript, Python, FastAPI, Uvicorn,Material UI",
         websiteURL: "https://dss-text-analyzer-frontend.vercel.app/",
@@ -42,12 +42,32 @@ const projects: ProjectCardProps[] = [
     },
     {
         title: "Marketplace - DSS Store",
-        srcImage: "/images/dss-store.png",
+        srcImages: ["/images/dss-store.png"],
         description: "A modern marketplace frontend built with React, featuring user registration, product listing, cart management with Zustand, and a seamless checkout process with contact, shipping details, and Stripe credit card payments.",
         technologies: "React, TypeScript, Node, Express, Stripe API, Zustand",
         websiteURL: "https://github.com/delberss/marketplace/blob/master/README.md",
         codeURL: "https://github.com/delberss/marketplace",
         hasLivePreview: false
+    },
+    {
+        title: "App Mobile - Futebol Explorer",
+        srcImages: [
+            "/images/mobile/1.jpg",
+            "/images/mobile/2.jpg",
+            "/images/mobile/3.jpg",
+            "/images/mobile/4.jpg",
+            "/images/mobile/5.jpg",
+            "/images/mobile/6.jpg",
+            "/images/mobile/7.jpg",
+
+        ],
+        description: "A mobile app with information about the main football clubs in Brazil, including titles and top scorers, with a feature that allows users to compare two clubs side by side.",
+        technologies: "React Native, Expo, TypeScript",
+        websiteURL: "https://github.com/delberss/marketplace/blob/master/README.md",
+        codeURL: {
+            mobile: "https://play.google.com/store/apps/details?id=com.delberss.dssapps"
+        },
+        hasLivePreview: true
     },
 ];
 
@@ -66,7 +86,7 @@ const ProjectsSection: React.FC = () => {
                             <AnimationComponent moveDirection={index % 2 == 0 ? "right" : "left"}>
                                 <ProjectCard
                                     title={project.title}
-                                    srcImage={project.srcImage}
+                                    srcImages={project.srcImages}
                                     description={project.description}
                                     technologies={project.technologies}
                                     websiteURL={project.websiteURL}
