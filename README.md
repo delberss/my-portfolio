@@ -26,7 +26,7 @@ Este projeto foi construído com as seguintes tecnologias:
 - ⚡ [Vite](https://vitejs.dev/) — para desenvolvimento rápido
 
 ---
-## 📁 Estrutura do Projeto
+## 📁 Estrutura do Projeto.
 ```
 my-portfolio/
 │
